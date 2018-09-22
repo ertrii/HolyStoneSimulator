@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Holy Stone Simulator</title>
+    <link rel="stylesheet" href="css/style.css">        
+    <link rel="stylesheet" href="node_modules/jmaple/dist/css/m--modern.css">
+  </head>
+  <body>
+    <header>
+        <img src="src/img/logo.png" alt="">
+    </header>
+    <div id="jmaple"></div>
+    <main class="containerGame">
+
+        <div class="mapleStory">
+            <div class="char">
+                <div class="img">
+                    <img src="src/img/char.png" alt="character">
+                </div>
+                <p class="name">
+                    Erick
+                </p>
+            </div>
+            <div class="NPC">
+                <div class="img" id="NPC_img" onclick="jmaple.show()">
+                    <img src="src/img/npc/holy_Stone.png" alt="NPC Holy Stone">
+                </div>
+                <p class="name">
+                    Holy Stone
+                </p>
+            </div>
+
+            <div class="tile">
+            </div>
+
+            <div class="mists mists-inFront">
+                <div class="mist mist-1">
+                    <img src="src/img/back/snowyLightrock-back/1.png" alt="">
+                </div>
+                <div class="mist mist-2">
+                    <img src="src/img/back/snowyLightrock-back/2.png" alt="">
+                </div>
+
+            </div>
+
+            <div class="mists mists-behind">
+                <div class="mist mist-1">
+                    <img src="src/img/back/snowyLightrock-back/1.png" alt="">
+                </div>
+                <div class="mist mist-2">
+                    <img src="src/img/back/snowyLightrock-back/1.png" alt="">
+                </div>
+            </div>
+
+            <div class="containerDialog" id="containerDialog">
+                <!-- Here msgDialog -->
+            </div>
+
+        </div>
+
+    </main>
+    <div class="Status">
+        <p class="Status__name">Erick</p>
+        <div class="Status__itemRequerid">
+            <p>Item: </p>
+            <span>1</span>
+        </div>
+        <div class="Status__tries">
+            <p>Intentos: </p>
+            <span>0</span>
+        </div>
+    </div>
+    <script src="js/mists.js"></script>
+    <script type="text/javascript" src="node_modules/jmaple/dist/js/jmaple.js"></script>
+    <script>
+        const jmaple = new JMaple({
+            el : 'jmaple',
+            npc : {
+                id : 123,
+                name : 'Holy Stone',
+                img : 'src/img/npc/holy_Stone.png'
+            },
+            script : function(){
+                this.start = function(){
+                    this.cm.sendOk('This is my first conversation')
+                    this.cm.dispose()
+                }
+            }
+        })
+        jmaple.config.zIndex = 1000;
+        //jmaple.show()
+    </script>
+
+  </body>
+</html>
