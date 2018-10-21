@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/m--modern.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body>
+  <body>    
     <header>
         <img src="src/img/logo.png" alt="">
     </header>
@@ -72,6 +72,11 @@
     <script src="js/mists.js"></script>
     <script type="text/javascript" src="js/jmaple.js"></script>
     <script>
+        const audio = new Audio();
+        audio.src = "src/music/WolfWood.mp3"
+        audio.play();
+        audio.loop = true
+
         const jmaple = new JMaple()
         jmaple.NPC.create(123, 'Holy Stone','src/img/npc/holy_Stone.png')
         jmaple.Item.etc.create(4005004, 'Dark Crystal')
@@ -138,7 +143,8 @@
                 }
             }
         })
-        talk.preference.zIndex = 1000;        
+        talk.preference.zIndex = 1000;
+        
     </script>
 
   </body>
