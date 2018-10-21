@@ -54,26 +54,10 @@ header img{
         background-position-x: 0px;
     }
 }
-/* @keyframes mountains-move-y {
-    0%{
-        background-position-y: bottom;
-    }
-    50%{
-        background-position-y: 150px;
-    }
-    95%{
-        background-position-y: 100px;
-    }
-    100%{
-        background-position-y: bottom;
-    }
-} */
+
 .char{
     width: 120px;
     color: white;
-}
-.NPC{
-
 }
 .char, .NPC{
     text-align: center;
@@ -115,9 +99,6 @@ header img{
     display: flex;
 }
 
-.mists-inFront{
-    /* z-index: 20; */
-}
 .mists-behind{
     z-index: 0;
 }
@@ -130,11 +111,6 @@ header img{
     position: relative;
     z-index: 20;
 }
-
-.mists-inFront .mist-1{
-
-}
-
 
 .containerDialog{
     justify-content: center;
@@ -199,8 +175,7 @@ header img{
 .npcImg_Dialog .dialog ul li:nth-child(1){
     margin-top: 8px;
 }
-.npcImg_Dialog .npcImg img{
-    width: 100%;
+.npcImg_Dialog .npcImg img{    
     display: inline;
 }
 .npcImg_Dialog .npcImg span{
@@ -248,7 +223,48 @@ header img{
     margin-left: 5px;
 }
 
+.notifications{
+    position: fixed;
+    bottom: 0px;
+    right: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    visibility: hidden;    
+    font-size: 9pt;
+    transition: .5s ease;
+    opacity: 0;
+}
+.notifications p{
+    padding: 5px;
+    font-size: 9pt;
+    
+}
 
+.visible{
+    visibility: visible;    
+    animation: notification 9000ms;
+}
+
+@keyframes notification {
+
+    0% {
+        bottom: 0px;
+        opacity: 0;
+    }
+    10%{
+        bottom: 10px;
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        bottom: 10px;
+    }
+}
 /*
 ==========================
 =======BarStatus==========
@@ -262,35 +278,19 @@ header img{
     width: 750px;
     margin-left: auto;
     margin-right: auto;
-    border-bottom:1px solid #666;
+    justify-content: space-between;
+    font-size: 9pt;
 }
 
-.Status div{
-    display: flex;    
-    margin-left: 15px;
-}
-.Status .Status__name{
-    width: 100%;
+.Status .Status__repository, .Status .Status__library, .Status .Status__itemRequerid{    
     padding: 2px 5px;
-    color: #D8F670;
+    color: #E4A900;
 }
-.Status .Status__itemRequerid{
-    border: 1px solid #7799CC;
+.Status .Status__repository a, .Status .Status__library a, .Status .Status__itemRequerid span{
+    color: white;
+    text-decoration: none;
+    font-size: 8pt;
 }
-.Status .Status__itemRequerid p{
-    background-color: #7799CC;
-}
-.Status .Status__tries{
-    border: 1px solid #6EB177;
-}
-.Status .Status__tries p{
-    background-color: #6EB177;
-}
-
-.Status div p{    
-    padding: 2px 5px;
-    font-weight: bold;    
-}
-.Status div span {
-    padding: 2px 5px;    
+.Status .Status__repository a:hover, .Status .Status__library a:hover{
+    text-decoration: underline;
 }
